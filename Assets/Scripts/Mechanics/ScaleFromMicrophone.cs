@@ -14,11 +14,6 @@ public class ScaleFromMicrophone : MonoBehaviour
     public float loudnessSensitibility = 100;
     public float loudnessThreshold = 0.1f;
 
-    private void Start()
-    {
-
-    }
-
     private void Update()
     {
         loudness = detector.GetLoudnessFromMicrophone() * loudnessSensitibility;
