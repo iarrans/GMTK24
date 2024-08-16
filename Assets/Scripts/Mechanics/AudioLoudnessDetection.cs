@@ -24,6 +24,7 @@ public class AudioLoudnessDetection : MonoBehaviour
     {
         //First microphone in device list
         string microphoneName = Microphone.devices[0];
+        Debug.Log(microphoneName);
         microphoneClip = Microphone.Start(microphoneName, true, 20, AudioSettings.outputSampleRate);
     }
 
