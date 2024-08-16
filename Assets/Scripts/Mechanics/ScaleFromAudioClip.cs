@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScaleFromAudioClip : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public AudioSource audioSource;
+    public Vector3 minScale;
+    public Vector3 maxScale;
+    public AudioLoudnessDetection detector;
+    float loudness = 0;
+
+    public float loudnessSensitibility = 100;
+    public float loudnessThreshold = 0.1f;
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        loudness = detector.GetLoudnessFromAudioClips(audioSource.timeSamples, audioSource.clip) * loudnessSensitibility;
+
+        if (loudness < loudnessThreshold)
+        {
+            loudness = 0;
+        }
+
+        transform.localScale = Vector3.Lerp(minScale, maxScale, loudness);
+    }
+}
