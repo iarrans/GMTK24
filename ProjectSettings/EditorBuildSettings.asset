@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StarterCinematic.unity
     guid: 0877372f9f6ae194584c8f31c1b1c9c1
   - enabled: 1
-    path: Assets/Scenes/GameplayScene.unity
+    path: Assets/Scenes/Level1.unity
     guid: cecbe682582888f49a56130c90820320
   - enabled: 0
     path: Assets/UnityWebGLMicrophone/Scenes/DisplayMics.unity
