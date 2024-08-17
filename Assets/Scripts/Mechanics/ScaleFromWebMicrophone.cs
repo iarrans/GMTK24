@@ -58,7 +58,7 @@ namespace UnityWebGLMicrophone
             
             loudness = volumes[microphoneIndex];
 #endif
-#if !UNITY_WEBGL
+#if !UNITY_WEBGL || UNITY_EDITOR
             loudness = detector.GetLoudnessFromMicrophone(microphoneIndex) * 10;
 #endif
             return loudness;
