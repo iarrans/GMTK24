@@ -11,6 +11,7 @@ public class PlayerPickUpDrop : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
 
     public ObjectGrababble objectGrababble;
+    public float mouseScrollY;
 
     void Update()
     {
@@ -50,6 +51,15 @@ public class PlayerPickUpDrop : MonoBehaviour
                 objectGrababble.Drop();
                 objectGrababble = null;
             }
+        }
+    }
+
+    public void OnGrabScroll(InputAction.CallbackContext context)
+    {
+        mouseScrollY = context.ReadValue<float>();
+        if (objectGrababble != null)
+        {
+            objectGrababble.ChangeOffset(mouseScrollY);
         }
     }
 }

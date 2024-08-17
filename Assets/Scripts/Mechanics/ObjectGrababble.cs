@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class ObjectGrababble : MonoBehaviour
     private Rigidbody rb;
     private Transform objectGrabPointTransform;
     [SerializeField] private float lerpSpeed = 10;
-    [SerializeField] private float offset = 10;
+    public float offset = 10;
 
     private void Awake()
     {
@@ -35,4 +36,14 @@ public class ObjectGrababble : MonoBehaviour
         } 
     }
 
+    internal void ChangeOffset(float mouseScrollY)
+    {
+        if (mouseScrollY < 0)
+        {
+            offset -= 1;
+        } else if (mouseScrollY > 0)
+        {
+            offset += 1;
+        }
+    }
 }

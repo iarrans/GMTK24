@@ -1145,6 +1145,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 38bda374-bf5c-4855-8b51-15595625c723
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1565174784}
+        m_TargetAssemblyTypeName: PlayerPickUpDrop, Assembly-CSharp
+        m_MethodName: OnGrabScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a2ed8894-7cd8-49e0-9a32-d5a0333cd7d9
+    m_ActionName: Player/GrabbingOffset[/Mouse/scroll/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1169,6 +1185,7 @@ MonoBehaviour:
     m_Bits: 1
   objectGrabPointTransform: {fileID: 1460119748}
   objectGrababble: {fileID: 0}
+  mouseScrollY: 0
 --- !u!1 &1601372895
 GameObject:
   m_ObjectHideFlags: 0
