@@ -39,7 +39,7 @@ public class DragAndDrop : MonoBehaviour
         {
             Debug.Log(hit.collider.name);
         }
-        {
+        else {
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + transform.forward * offset);
         }   
     }
