@@ -13,9 +13,10 @@ namespace UnityWebGLMicrophone
 
         public float minScale = 0.5f;
         public float maxScale = 100f;
-
-        public TextMeshProUGUI microphoneName;
+        
         public TextMeshProUGUI microphoneVolume;
+
+        private int microphoneIndex = 0;
 
 #if UNITY_EDITOR
 
@@ -34,11 +35,9 @@ namespace UnityWebGLMicrophone
         void Update()
         {
             string[] devices = Microphone.devices;
-            microphoneName.text = devices[0];
 
             float loudness = GetMicrophoneLoudness();
             microphoneVolume.text = loudness.ToString();
-            Debug.Log(loudness);
             if (loudness < 0.1f) return;
             if (loudness > scaleThreshold)
             {
@@ -57,12 +56,17 @@ namespace UnityWebGLMicrophone
             Microphone.Update();
             float[] volumes = Microphone.volumes;
             
-            loudness = volumes[0];
+            loudness = volumes[microphoneIndex];
 #endif
 #if !UNITY_WEBGL
-            loudness = detector.GetLoudnessFromMicrophone() * 10;
+            loudness = detector.GetLoudnessFromMicrophone(microphoneIndex) * 10;
 #endif
             return loudness;
+        }
+
+        public void changeMicrophoneIndex(int index)
+        {
+            microphoneIndex = index;
         }
     }
 }
