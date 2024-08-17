@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VoiceTestScene.unity
     guid: 0dcf53071bb3c8241bcdf3558ed08176
+  - enabled: 1
+    path: Assets/Scenes/ObjectMovementTest.unity
+    guid: f64d735ecc3d250418e348961fe2d1cc
   m_configObjects: {}

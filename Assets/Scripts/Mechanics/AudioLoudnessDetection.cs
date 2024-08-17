@@ -38,7 +38,7 @@ public class AudioLoudnessDetection : MonoBehaviour
     {
         float loudness;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        loudness = AudioLoudnessDetectionWebGL.GetScaleChangeVariation()
+        loudness = AudioLoudnessDetectionWebGL.GetScaleChangeVariation();
 #endif
 #if !UNITY_WEBGL || UNITY_EDITOR
         loudness = GetLoudnessFromMicrophone() * 10;
@@ -107,11 +107,11 @@ public class AudioLoudnessDetection : MonoBehaviour
         return totalLoudness / sampleWindow;
     }
 
+#endif
     public void ClearSamples()
     {
         loudnessSamples.Clear();
     }
-#endif
 }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
