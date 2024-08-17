@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float limitX, limitY;
     //Indica si pj está en el suelo
     public bool grounded;
+    public LayerMask groundMask;
 
     public static PlayerController instance;
 
@@ -26,9 +27,6 @@ public class PlayerController : MonoBehaviour
     {
         look = context.ReadValue<Vector2>();
     }
-
-
-
 
     private void FixedUpdate()
     {
@@ -67,7 +65,7 @@ public class PlayerController : MonoBehaviour
         cameraHolder.transform.eulerAngles = new Vector3(lookRotation, cameraHolder.transform.eulerAngles.y, cameraHolder.transform.eulerAngles.z);
     }
 
-    void Jump()
+    public void OnJump(InputAction.CallbackContext context)
     {
         Vector3 jumpForces = Vector3.zero;
         if (grounded)
@@ -84,27 +82,15 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
+    void Update()
+    {
+        // Verificar si el jugador está en el suelo
+        grounded = Physics.Raycast(transform.GetChild(0).position, Vector3.down, 0.75f, groundMask);
+    }
 
     void LateUpdate()
     {
         Look();
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            grounded = true;
-        }
-    }
-
-    void OnCollisionExit(Collision collider)
-    {
-        if (collider.gameObject.CompareTag("Floor"))
-        {
-            grounded = false;
-        }
-    }
-
 
 }
