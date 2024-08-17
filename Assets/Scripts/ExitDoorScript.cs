@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ExitDoorScript : MonoBehaviour
@@ -10,6 +11,8 @@ public class ExitDoorScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("LevelFinished");
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(nextScene);
         }
     }
