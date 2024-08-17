@@ -20,7 +20,6 @@ namespace UnityWebGLMicrophone
 #if UNITY_EDITOR
 
         public AudioLoudnessDetection detector;
-        float loudness = 0;
 
 #endif
 
@@ -32,66 +31,38 @@ namespace UnityWebGLMicrophone
         }
 #endif
 
-     void Update()
+        void Update()
         {
-#if UNITY_WEBGL && !UNITY_EDITOR
-
-            Microphone.Update();
-        
-#endif
-
             string[] devices = Microphone.devices;
             microphoneName.text = devices[0];
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-            float[] volumes = Microphone.volumes;
-
-             float loudness = volumes[0];
-
-             microphoneVolume.text = volumes[0].ToString();
-
-            if (loudness < loudnessThreshold)
-            {
-                loudness = 0;
-            }
-            Debug.Log(loudness);
-            if (loudness < 0.0001f) return;
-            if (loudness > 0.2f)
-            {
-
-                if (transform.localScale.x < maxScale) transform.localScale = transform.localScale + (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime);
-            }
-            else
-            {
-                if (transform.localScale.x > minScale) transform.localScale = transform.localScale - (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime);
-            }
-
-#endif
-
-#if UNITY_EDITOR
-
-            loudness = detector.GetLoudnessFromMicrophone() * loudnessSensitibility;
-
+            float loudness = GetMicrophoneLoudness();
             microphoneVolume.text = loudness.ToString();
+            Debug.Log(loudness);
+            if (loudness < 0.1f) return;
+            if (loudness > scaleThreshold)
+            {
+                if (transform.localScale.x < maxScale) transform.localScale = transform.localScale + (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime * loudness);
+            } else
+            {
+                if (transform.localScale.x > minScale) transform.localScale = transform.localScale - (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime * (1 - loudness));
+            }
 
-
-            if (loudness < loudnessThreshold)
-        {
-            loudness = 0;
         }
-        Debug.Log(loudness);
-        if (loudness < 0.1f) return;
-        if (loudness > scaleThreshold)
+
+        private float GetMicrophoneLoudness()
         {
+            float loudness = 0;
+#if UNITY_WEBGL && !UNITY_EDITOR
+            Microphone.Update();
+            float[] volumes = Microphone.volumes;
             
-            if (transform.localScale.x < maxScale) transform.localScale = transform.localScale + (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime * loudness);
-        } else
-        {
-            if (transform.localScale.x > minScale) transform.localScale = transform.localScale - (new Vector3(scaleVelocity, scaleVelocity, scaleVelocity) * Time.deltaTime * (1 - loudness));
-        }
-
+            loudness = volumes[0];
 #endif
-
+#if !UNITY_WEBGL
+            loudness = detector.GetLoudnessFromMicrophone() * 10;
+#endif
+            return loudness;
         }
     }
 }
