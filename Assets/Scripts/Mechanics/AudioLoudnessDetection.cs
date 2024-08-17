@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityWebGLMicrophone;
 
 public class AudioLoudnessDetection : MonoBehaviour
 {
@@ -111,6 +112,11 @@ public class AudioLoudnessDetection : MonoBehaviour
     public void ClearSamples()
     {
         loudnessSamples.Clear();
+    }
+
+    private void Update()
+    {
+        GetScaleChangeVariation();
     }
 }
 

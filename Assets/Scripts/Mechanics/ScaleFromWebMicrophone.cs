@@ -9,11 +9,10 @@ namespace UnityWebGLMicrophone
         public float maxScale = 10f;
         public float minScale = 0.5f;
 
-        void Update()
+        public void Scale()
         {
             float scaleVariation = detector.GetScaleChangeVariation();
-            if (Input.GetMouseButtonDown(1)) detector.ClearSamples();
-            if (scaleVariation == 0 || !Input.GetMouseButton(1)) return;
+            if (scaleVariation == 0) return;
             
             Vector3 newScale = transform.localScale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
             if (scaleVariation > 0 && transform.localScale.x > maxScale) newScale = new(maxScale, maxScale, maxScale);
