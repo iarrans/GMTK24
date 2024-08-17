@@ -673,6 +673,11 @@ PrefabInstance:
       objectReference: {fileID: 1422490}
     - target: {fileID: 8686166818994203800, guid: f33f8cd56c0e7734f9547795f0486731,
         type: 3}
+      propertyPath: scaleThreshold
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686166818994203800, guid: f33f8cd56c0e7734f9547795f0486731,
+        type: 3}
       propertyPath: microphoneVolume
       value: 
       objectReference: {fileID: 584134112}
