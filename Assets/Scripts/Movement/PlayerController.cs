@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     //Indica si pj está en el suelo
     public bool grounded;
     public LayerMask groundMask;
+    public bool canMove = true;
 
     public static PlayerController instance;
 
@@ -30,7 +31,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (canMove) {
+
+            Move();
+        }
+        
     }
 
     void Move() {
@@ -56,13 +61,16 @@ public class PlayerController : MonoBehaviour
 
     void Look()
     {
-        //Turn (LooK x = Mouse X)
-        transform.Rotate(Vector3.up * look.x * senstivity);
+        if (canMove)
+        {
+            //Turn (LooK x = Mouse X)
+            transform.Rotate(Vector3.up * look.x * senstivity);
 
-        //Look
-        lookRotation += (-look.y * senstivity);
-        lookRotation = Mathf.Clamp(lookRotation, -limitX, limitY);
-        cameraHolder.transform.eulerAngles = new Vector3(lookRotation, cameraHolder.transform.eulerAngles.y, cameraHolder.transform.eulerAngles.z);
+            //Look
+            lookRotation += (-look.y * senstivity);
+            lookRotation = Mathf.Clamp(lookRotation, -limitX, limitY);
+            cameraHolder.transform.eulerAngles = new Vector3(lookRotation, cameraHolder.transform.eulerAngles.y, cameraHolder.transform.eulerAngles.z);
+        }      
     }
 
     public void OnJump(InputAction.CallbackContext context)
