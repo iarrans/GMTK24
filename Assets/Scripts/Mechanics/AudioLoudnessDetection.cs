@@ -23,7 +23,7 @@ public class AudioLoudnessDetection : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
     void Awake()
     {
-        AudioLoudnessDetectionWebGL.Awake();
+        UnityWebGLMicrophone.AudioLoudnessDetectionWebGL.Awake();
     }
 #endif
 
@@ -38,7 +38,7 @@ public class AudioLoudnessDetection : MonoBehaviour
     {
         float loudness;
 #if UNITY_WEBGL && !UNITY_EDITOR
-        loudness = AudioLoudnessDetectionWebGL.GetScaleChangeVariation();
+        loudness = UnityWebGLMicrophone.AudioLoudnessDetectionWebGL.GetScaleChangeVariation(microphoneIndex);
 #endif
 #if !UNITY_WEBGL || UNITY_EDITOR
         loudness = GetLoudnessFromMicrophone() * 10;
@@ -125,11 +125,11 @@ namespace UnityWebGLMicrophone
             Microphone.QueryAudioInput();
         }
 
-        public static float GetScaleChangeVariation() {
+        public static float GetScaleChangeVariation(int microphoneIndex) {
             Microphone.Update();
         float[] volumes = Microphone.volumes;
             
-        return loudness = volumes[microphoneIndex];
+        return volumes[microphoneIndex];
         }
     }
 }
