@@ -1,0 +1,3 @@
+Ponle un color random blanco. Los materiales en una telaraña no influyen en nada:,)
+
+Y el indio no me explicó como cortarle las uvs a esto.
