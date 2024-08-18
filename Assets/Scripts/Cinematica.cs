@@ -13,6 +13,7 @@ public class Cinematica : MonoBehaviour
     [SerializeField] long frameCount;
     [SerializeField] long playerCurrentFrame;
     public bool cinematicStarted = false;
+    public int nextScene;
 
     public void PauseVideo()
     {
@@ -27,7 +28,7 @@ public class Cinematica : MonoBehaviour
     public void SkipVideo()
     {
         Debug.Log("Skipping Cinematic");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(nextScene);
     }
 
     private void Start()
@@ -54,7 +55,7 @@ public class Cinematica : MonoBehaviour
             if (playerCurrentFrame >= frameCount - 1 && frameCount!=0)
             {
                 Debug.Log("CinematicEnded");
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(nextScene);
             }             
     }
     

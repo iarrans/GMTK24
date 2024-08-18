@@ -658,6 +658,21 @@ PrefabInstance:
       propertyPath: detector
       value: 
       objectReference: {fileID: 964353157}
+    - target: {fileID: 4796016967715706788, guid: b80c536ea5b168c47bf0a87e0e88e9b8,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4796016967715706788, guid: b80c536ea5b168c47bf0a87e0e88e9b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4ad8fc687e7a5874082ed1ebe5906054, type: 2}
+    - target: {fileID: 4796016967715706788, guid: b80c536ea5b168c47bf0a87e0e88e9b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e8728dec03715e40a6403cf27301def, type: 2}
     - target: {fileID: 7216073419756414098, guid: b80c536ea5b168c47bf0a87e0e88e9b8,
         type: 3}
       propertyPath: m_Name
