@@ -478,7 +478,7 @@ MonoBehaviour:
   frameCount: 0
   playerCurrentFrame: 0
   cinematicStarted: 0
-  nextScene: 5
+  nextScene: 2
 --- !u!4 &944002555
 Transform:
   m_ObjectHideFlags: 0
