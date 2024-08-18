@@ -1063,34 +1063,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a090ee15f3f8214bba8e132d59b07f4, type: 3}
---- !u!1 &1565174776 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1882627498954663717, guid: d4f6fc8a630855042a581bb0cecca886,
-    type: 3}
-  m_PrefabInstance: {fileID: 7951167566353919822}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1565174785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565174776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4baf7c277a7d341aeaf7e4f7d432e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCameraTransform: {fileID: 1601372898}
-  pickUpLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
---- !u!4 &1601372898 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 647014772741289024, guid: d4f6fc8a630855042a581bb0cecca886,
-    type: 3}
-  m_PrefabInstance: {fileID: 7951167566353919822}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1668068292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1817,58 +1789,13 @@ PrefabInstance:
     - target: {fileID: 1882627498954663717, guid: d4f6fc8a630855042a581bb0cecca886,
         type: 3}
       propertyPath: m_Name
-      value: Capsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
-      value: 40d6d3d8-5490-4941-9b0e-f3cbb31e5636
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
-      value: Player/PauseMenu[/Keyboard/tab]
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 416556183}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PauseGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 8692715949808181468, guid: d4f6fc8a630855042a581bb0cecca886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1922,11 +1849,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1882627498954663717, guid: d4f6fc8a630855042a581bb0cecca886,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1565174785}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f6fc8a630855042a581bb0cecca886, type: 3}
 --- !u!1001 &8996680095020042091
 PrefabInstance:
