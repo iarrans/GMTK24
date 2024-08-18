@@ -8,12 +8,14 @@ using UnityWebGLMicrophone;
 
 public class AudioLoudnessDetection : MonoBehaviour
 {
+    public static float microphoneSensitivity = 0.3f;
+
     // Start is called before the first frame update
     public int sampleWindow = 64;
     private AudioClip microphoneClip;
     private int microphoneIndex;
     public float minScaleThreshold = 0.001f;
-    public float scaleThreshold = 0.1f;
+    
     public float scaleVelocity = 10f;
     public TextMeshProUGUI microphoneVolume;
     public Slider loudnessSlider;
@@ -57,7 +59,7 @@ public class AudioLoudnessDetection : MonoBehaviour
         loudnessSlider.value = loudness;
 
         if (loudness == 0f) return 0f;
-        if (loudness > scaleThreshold)
+        if (loudness > microphoneSensitivity)
         {
             return scaleVelocity * Time.deltaTime * (1 + loudness);
         }
