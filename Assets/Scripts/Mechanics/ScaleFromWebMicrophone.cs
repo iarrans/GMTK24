@@ -1,5 +1,7 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace UnityWebGLMicrophone
 {
@@ -9,6 +11,8 @@ namespace UnityWebGLMicrophone
         public ParticleSystem grabParticles;
         public float maxScale = 10f;
         public float minScale = 0.5f;
+        public Material blinkShaderMaterial;
+        public MeshRenderer meshRenderer;
 
         public void Scale()
         {
@@ -23,6 +27,21 @@ namespace UnityWebGLMicrophone
             } else if (scaleVariation < 0 && transform.localScale.x < minScale) {
                 newScale = new(minScale, minScale, minScale);
                 newParticleScale = grabParticles.shape.scale;
+            }
+
+            List<Material> materials = meshRenderer.materials.ToList();
+            if (newScale.x >= maxScale || newScale.x <= minScale)
+            {
+                
+                if (materials.Count == 1)
+                {
+                    materials.Add(blinkShaderMaterial);
+                    meshRenderer.materials = materials.ToArray();
+                }
+            } else if(materials.Count == 2)
+            {
+                materials.RemoveAt(1);
+                meshRenderer.materials = materials.ToArray();
             }
 
             transform.localScale = newScale;

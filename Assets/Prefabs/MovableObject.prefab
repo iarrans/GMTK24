@@ -146,6 +146,8 @@ MonoBehaviour:
   grabParticles: {fileID: 9013845479277001497}
   maxScale: 10
   minScale: 0.5
+  blinkShaderMaterial: {fileID: 2100000, guid: 513593d3f5380d24aa3462c1de31ca62, type: 2}
+  meshRenderer: {fileID: 4796016967715706788}
 --- !u!65 &3034261338359993948
 BoxCollider:
   m_ObjectHideFlags: 0
