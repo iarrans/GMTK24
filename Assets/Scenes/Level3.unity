@@ -723,6 +723,104 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9468355, y: 4.696042, z: 1.5236874}
   m_Center: {x: -2.3947828, y: -0.2730586, z: 0.7877852}
+--- !u!1001 &1664224414
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 317323166337525091, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 317323166337525091, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -4.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.2943914
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.860928
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.4775
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.7711
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 775587784027666342, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180630378025570339, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: nextScene
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279026643059497986, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892103783137628264, guid: 5bbbbbfeb408e0042bcc70ae94841282,
+        type: 3}
+      propertyPath: m_Name
+      value: ExitDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5bbbbbfeb408e0042bcc70ae94841282, type: 3}
 --- !u!1 &1717866050 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2856515172623118694, guid: 6fc251423d666474f9f89c0580dd0b80,
@@ -912,3 +1010,4 @@ SceneRoots:
   - {fileID: 579711043}
   - {fileID: 1319057405}
   - {fileID: 2067074622}
+  - {fileID: 1664224414}
