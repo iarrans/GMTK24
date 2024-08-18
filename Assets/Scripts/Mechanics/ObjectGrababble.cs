@@ -9,6 +9,7 @@ public class ObjectGrababble : MonoBehaviour
     private Transform objectGrabPointTransform;
     [SerializeField] private float lerpSpeed = 10;
     public float offset = 10;
+    public ParticleSystem grabParticles;
 
     private void Awake()
     {
@@ -19,12 +20,14 @@ public class ObjectGrababble : MonoBehaviour
         this.objectGrabPointTransform = objectGrabPointTransform;
         rb.useGravity = false;
         offset = Vector3.Distance(transform.position, objectGrabPointTransform.position);
+        grabParticles.gameObject.SetActive(true);
     }
 
     public void Drop()
     {
         objectGrabPointTransform = null;
         rb.useGravity = true;
+        grabParticles.gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
