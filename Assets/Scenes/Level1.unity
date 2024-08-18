@@ -989,6 +989,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -1241187549322981273, guid: 507a3446f77d12e4e8635fbd9703ed55,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 86149cd1676273d4783461df6d87c7cd, type: 2}
     - target: {fileID: -206254283356321021, guid: 507a3446f77d12e4e8635fbd9703ed55,
         type: 3}
       propertyPath: m_Intensity
