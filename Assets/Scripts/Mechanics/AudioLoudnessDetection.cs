@@ -11,7 +11,7 @@ public class AudioLoudnessDetection : MonoBehaviour
     public static float microphoneSensitivity = 0.3f;
 
     // Start is called before the first frame update
-    public int sampleWindow = 64;
+    public int sampleWindow = 264;
     private AudioClip microphoneClip;
     private int microphoneIndex;
     public float minScaleThreshold = 0.001f;
@@ -21,7 +21,7 @@ public class AudioLoudnessDetection : MonoBehaviour
     public Slider loudnessSlider;
     public int maxLoudnessSamplesSize = 200;
 
-    private List<float> loudnessSamples = new List<float>();
+    private List<float> loudnessSamples = new();
 
 #if UNITY_WEBGL && !UNITY_EDITOR
     void Awake()
@@ -49,14 +49,20 @@ public class AudioLoudnessDetection : MonoBehaviour
 
         if (loudness < minScaleThreshold) loudness = 0f;
         loudness = Mathf.Clamp01(loudness);
-        loudnessSamples.Add(loudness);
-        if (loudnessSamples.Count > maxLoudnessSamplesSize) loudnessSamples.RemoveAt(0);
-        float mean = 0;
-        loudnessSamples.ForEach(l => mean += l);
-        Debug.Log(mean / loudnessSamples.Count);
-        loudness = mean / loudnessSamples.Count;
-        microphoneVolume.text = loudness.ToString();
-        loudnessSlider.value = loudness;
+        if (loudness != 0)
+        {
+            loudnessSamples.Add(loudness);
+            if (loudnessSamples.Count > maxLoudnessSamplesSize) loudnessSamples.RemoveAt(0);
+            float mean = 0;
+            loudnessSamples.ForEach(l => mean += l);
+            loudness = mean / loudnessSamples.Count;
+        } else
+        {
+            ClearSamples();
+        }
+        
+        if (microphoneVolume != null) microphoneVolume.text = loudness.ToString();
+        if (loudnessSlider != null) loudnessSlider.value = loudness;
 
         if (loudness == 0f) return 0f;
         if (loudness > microphoneSensitivity)
