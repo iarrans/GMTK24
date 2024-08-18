@@ -136,6 +136,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1176030468}
+    - target: {fileID: 6006078564721837149, guid: d4f6fc8a630855042a581bb0cecca886,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8692715949808181468, guid: d4f6fc8a630855042a581bb0cecca886,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,6 +512,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69437a7f74842f442aad9a3a09e0568c, type: 3}
+--- !u!114 &1176030468 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3271973619623176575, guid: 69437a7f74842f442aad9a3a09e0568c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1176030467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc0e55623d854243b444e44a2ce4cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1291333903
 PrefabInstance:
   m_ObjectHideFlags: 0
