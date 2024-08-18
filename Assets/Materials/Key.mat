@@ -21,9 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Key
-  m_Shader: {fileID: -6465566751694194690, guid: 1e1a12b6b2bae4543971a931d6517e1e,
-    type: 3}
-  m_Parent: {fileID: 2100000, guid: f29ab1d66e1495843accc3b0a0f31d6e, type: 2}
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: 2100000, guid: 4ad8fc687e7a5874082ed1ebe5906054, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -31,7 +30,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_LockedProperties: 
   m_SavedProperties:
@@ -41,5 +41,5 @@ Material:
     m_Floats:
     - _Scale: 0.1
     m_Colors:
-    - _Color: {r: 1, g: 0.812134, b: 0.6367924, a: 1}
+    - _Color: {r: 0.99514276, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
