@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 public class ExitDoorScript : MonoBehaviour
 {
     public int nextScene;
+
+    public ChangeSceneBehaviour changeSceneBehaviour;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("LevelFinished");
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(nextScene);
+            changeSceneBehaviour.ChangeScene(nextScene);
         }
     }
 }

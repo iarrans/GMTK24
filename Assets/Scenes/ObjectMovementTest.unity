@@ -1782,49 +1782,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2820887692074237566, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 3603627422400595589, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
-        type: 2}
-    - target: {fileID: 4820464113806260737, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: magicDropClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 236ff1b7c5325cf47985ca6cafe7d98e, type: 3}
-    - target: {fileID: 6211135004163736256, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6211135004163736256, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 60d0c6ede6bf01c44bf374864318e1a8, type: 3}
-    - target: {fileID: 6211135004163736256, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 3603627422400595589, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
-        type: 2}
-    - target: {fileID: 7790652879264227176, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790652879264227176, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7790652879264227176, guid: 1bca896eb71d32c4cb219eaaae6a487f,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -3547369882716958113, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
-        type: 2}
     - target: {fileID: 8574993614670005331, guid: 1bca896eb71d32c4cb219eaaae6a487f,
         type: 3}
       propertyPath: m_Name

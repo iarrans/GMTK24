@@ -41,12 +41,13 @@ AudioSource:
   m_GameObject: {fileID: 2091723728043393502}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3547369882716958113, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f6723b9c831218941b6e66007e678f75, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -169,7 +170,8 @@ AudioSource:
   m_GameObject: {fileID: 5047629010517516491}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3603627422400595589, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -297,12 +299,13 @@ AudioSource:
   m_GameObject: {fileID: 8355197544950131987}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 50b11c234bb60164d99663058803e5da, type: 3}
+  OutputAudioMixerGroup: {fileID: 3603627422400595589, guid: 3c8fcc824b176ce47a8f29ddea8435e3,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 60d0c6ede6bf01c44bf374864318e1a8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -434,4 +437,5 @@ MonoBehaviour:
   BGMSource: {fileID: 7790652879264227176}
   MagicSFXSource: {fileID: 6211135004163736256}
   SFXSource: {fileID: 2820887692074237566}
-  instance: {fileID: 0}
+  magicDropClip: {fileID: 8300000, guid: 236ff1b7c5325cf47985ca6cafe7d98e, type: 3}
+  doorClip: {fileID: 8300000, guid: de6e85ea66b87f345aff84303b5053b7, type: 3}
