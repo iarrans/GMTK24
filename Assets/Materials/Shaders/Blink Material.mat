@@ -52,7 +52,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Frequency: 3.44
-    - _MaxAlpha: 0.8
+    - _MaxAlpha: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
