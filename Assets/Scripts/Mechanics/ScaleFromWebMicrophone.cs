@@ -21,10 +21,10 @@ namespace UnityWebGLMicrophone
             
             Vector3 newScale = transform.localScale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
             Vector3 newParticleScale = grabParticles.shape.scale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
-            if (scaleVariation > 0 && transform.localScale.x > maxScale) {
+            if (newScale.x > maxScale) {
                 newScale = new(maxScale, maxScale, maxScale);
                 newParticleScale = grabParticles.shape.scale;
-            } else if (scaleVariation < 0 && transform.localScale.x < minScale) {
+            } else if (newScale.x < minScale) {
                 newScale = new(minScale, minScale, minScale);
                 newParticleScale = grabParticles.shape.scale;
             }
