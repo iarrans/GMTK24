@@ -29,7 +29,6 @@ public class PlayerPickUpDrop : MonoBehaviour
             } //Que no se pueda levitar a traves de la pared
             else if (objectGrababble != null && Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, Vector3.Distance(playerCameraTransform.position, objectGrababble.transform.position), pickUpLayerMask))
             {
-                Debug.Log(raycastHit.collider.name);
                 if (objectGrababble.gameObject != raycastHit.collider.gameObject)
                 {
                     objectGrababble.Drop();
