@@ -5,15 +5,34 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioSource BGMSource;
+
+    public AudioSource MagicSFXSource;
+
+    public AudioSource SFXSource;
+
+    public AudioClip magicDropClip;
+    public AudioClip doorClip;
+
+    public static AudioManager instance;
+
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        Debug.Log("Audio" + AudioListener.volume);
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MagicDropClip()
     {
-        
+        SFXSource.clip = magicDropClip;
+        SFXSource.Play();
     }
+
+    public void PlayDoorClip()
+    {
+        SFXSource.clip = doorClip;
+        SFXSource.Play();
+    }
+
 }

@@ -21,6 +21,7 @@ public class ObjectGrababble : MonoBehaviour
         rb.useGravity = false;
         offset = Vector3.Distance(transform.position, objectGrabPointTransform.position);
         grabParticles.gameObject.SetActive(true);
+        AudioManager.instance.MagicSFXSource.Play();
     }
 
     public void Drop()
@@ -28,6 +29,8 @@ public class ObjectGrababble : MonoBehaviour
         objectGrabPointTransform = null;
         rb.useGravity = true;
         grabParticles.gameObject.SetActive(false);
+        AudioManager.instance.MagicSFXSource.Stop();
+        AudioManager.instance.MagicDropClip();
     }
 
     private void FixedUpdate()

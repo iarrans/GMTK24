@@ -11,6 +11,7 @@ public class DoorScript : MonoBehaviour
         if (other.CompareTag("Key"))
         {
             OpenDoor(other);
+            AudioManager.instance.PlayDoorClip();
         }
     }
 
