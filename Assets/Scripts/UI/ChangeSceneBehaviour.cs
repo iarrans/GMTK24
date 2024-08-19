@@ -54,6 +54,7 @@ public class ChangeSceneBehaviour : MonoBehaviour
     public void ChangeScene(int scene)
     {
         gameObject.SetActive(true);
+        AudioManager.instance.PlayDoorClip();
         onChangeScene = true;
         sceneToChange = scene;
         EventSystem.current.enabled = false;
