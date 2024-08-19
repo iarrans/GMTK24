@@ -52,9 +52,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Frequency: 3.44
-    - _MaxAlpha: 0.6
+    - _MaxAlpha: 0.8
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.8050314, g: 0.30631688, b: 0.30631688, a: 1}
+    - _Color: {r: 0.8238993, g: 0.1787705, b: 0.1787705, a: 1}
   m_BuildTextureStacks: []
