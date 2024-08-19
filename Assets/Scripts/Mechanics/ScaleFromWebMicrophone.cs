@@ -14,6 +14,13 @@ namespace UnityWebGLMicrophone
         public Material blinkShaderMaterial;
         public MeshRenderer meshRenderer;
 
+        private float particlesScaleMultiplier;
+
+        private void Start()
+        {
+            particlesScaleMultiplier = 1 / transform.localScale.x;
+        }
+
         private void Update()
         {
             if(Input.GetMouseButtonUp(1)) RemoveBlinkShader();
@@ -25,7 +32,7 @@ namespace UnityWebGLMicrophone
             if (scaleVariation == 0) return;
             
             Vector3 newScale = transform.localScale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
-            Vector3 newParticleScale = grabParticles.shape.scale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
+            Vector3 newParticleScale = grabParticles.shape.scale + particlesScaleMultiplier * new Vector3(scaleVariation, scaleVariation, scaleVariation);
             if (newScale.x > maxScale) {
                 newScale = new(maxScale, maxScale, maxScale);
                 newParticleScale = grabParticles.shape.scale;
