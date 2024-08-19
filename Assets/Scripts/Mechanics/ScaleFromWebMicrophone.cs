@@ -14,6 +14,11 @@ namespace UnityWebGLMicrophone
         public Material blinkShaderMaterial;
         public MeshRenderer meshRenderer;
 
+        private void Update()
+        {
+            if(Input.GetMouseButtonUp(1)) RemoveBlinkShader();
+        }
+
         public void Scale()
         {
             float scaleVariation = detector.GetScaleChangeVariation();
@@ -48,6 +53,16 @@ namespace UnityWebGLMicrophone
 
             var particleShape = grabParticles.shape;
             particleShape.scale = newParticleScale;
+        }
+
+        public void RemoveBlinkShader()
+        {
+            List<Material> materials = meshRenderer.materials.ToList();
+            if (materials.Count == 2)
+            {
+                materials.RemoveAt(1);
+                meshRenderer.materials = materials.ToArray();
+            }
         }
     }
 }
