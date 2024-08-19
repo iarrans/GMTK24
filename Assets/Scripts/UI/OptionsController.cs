@@ -11,6 +11,7 @@ public class OptionsController : MonoBehaviour
     public Slider sfxVolumeSlider;
     public AudioMixer audioMixer;
     public Slider microphoneSensitivity;
+    public Slider mouseSensitivity;
 
     private static float mainVolume = 1;
     private static float musicVolume = 1;
@@ -26,6 +27,7 @@ public class OptionsController : MonoBehaviour
         musicVolumeSlider.value = musicVolume;
         sfxVolumeSlider.value = sfxVolume;
         microphoneSensitivity.value = AudioLoudnessDetection.microphoneSensitivity;
+        mouseSensitivity.value = PlayerController.sensitivity;
     }
 
     public void ChangeMainVolume(float volume)
@@ -49,5 +51,10 @@ public class OptionsController : MonoBehaviour
     public void ChangeMicrophoneSensitivity(float sensitivity)
     {
         AudioLoudnessDetection.microphoneSensitivity = sensitivity;
+    }
+
+    public void ChangeMouseSensitivity(float sensitivity)
+    {
+        PlayerController.sensitivity = sensitivity;
     }
 }

@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public static float sensitivity = 0.5f;
+
     public Rigidbody rb;
     public GameObject cameraHolder;
-    public float speed, senstivity, jumpForce, groundDistance;
+    public float speed, jumpForce, groundDistance;
     private Vector2 move, look;
     private float lookRotation;
     public float maxForce;
@@ -64,10 +66,10 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             //Turn (LooK x = Mouse X)
-            transform.Rotate(Vector3.up * look.x * senstivity);
+            transform.Rotate(Vector3.up * look.x * sensitivity);
 
             //Look
-            lookRotation += (-look.y * senstivity);
+            lookRotation += (-look.y * sensitivity);
             lookRotation = Mathf.Clamp(lookRotation, -limitX, limitY);
             cameraHolder.transform.eulerAngles = new Vector3(lookRotation, cameraHolder.transform.eulerAngles.y, cameraHolder.transform.eulerAngles.z);
         }      
