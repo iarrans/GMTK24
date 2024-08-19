@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
+    public Animator animator;
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -81,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if (grounded)
         {
             jumpForces = Vector3.up * jumpForce;
+            animator.Play("Jump");
         }
 
         rb.AddForce(jumpForces, ForceMode.VelocityChange);
