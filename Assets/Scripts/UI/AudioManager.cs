@@ -11,17 +11,20 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource SFXSource;
 
-    public AudioManager instance;
-    
+    public AudioClip magicDropClip;
+
+    public static AudioManager instance;
+
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        Debug.Log("Audio" + AudioListener.volume);
+        instance = this;
     }
 
-    public void PlayAudioClip(AudioClip audioclip)
+    public void MagicDropClip()
     {
-        SFXSource.clip = audioclip;
+        SFXSource.clip = magicDropClip;
         SFXSource.Play();
     }
    
