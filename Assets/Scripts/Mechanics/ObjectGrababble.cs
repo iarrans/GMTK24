@@ -10,18 +10,22 @@ public class ObjectGrababble : MonoBehaviour
     [SerializeField] private float lerpSpeed = 10;
     public float offset = 10;
     public ParticleSystem grabParticles;
+    public bool canBeGrabbed = true;
+
+    private PlayerPickUpDrop playerPickUpDrop;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void Grab(Transform objectGrabPointTransform)
+    public void Grab(Transform objectGrabPointTransform, PlayerPickUpDrop player)
     {
         this.objectGrabPointTransform = objectGrabPointTransform;
         rb.useGravity = false;
         offset = Vector3.Distance(transform.position, objectGrabPointTransform.position);
         grabParticles.gameObject.SetActive(true);
         AudioManager.instance.MagicSFXSource.Play();
+        playerPickUpDrop = player;
     }
 
     public void Drop()
@@ -51,5 +55,26 @@ public class ObjectGrababble : MonoBehaviour
         {
             offset += 1;
         }
+
+        if (offset < 2) offset = 2;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (playerPickUpDrop == null) return;
+        Drop();
+        playerPickUpDrop.objectGrababble = null;
+        canBeGrabbed = false;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        StartCoroutine(DelayCanBeGrabbed());
+    }
+
+    IEnumerator DelayCanBeGrabbed()
+    {
+        yield return new WaitForSeconds(1f);
+        canBeGrabbed = true;
     }
 }

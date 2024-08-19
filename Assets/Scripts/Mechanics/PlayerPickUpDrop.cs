@@ -15,7 +15,7 @@ public class PlayerPickUpDrop : MonoBehaviour
 
     void Update()
     {
-        if (pressingKey)
+        if (pressingKey && !UIManager.isPaused)
         {
             if (objectGrababble == null)
             {
@@ -23,7 +23,7 @@ public class PlayerPickUpDrop : MonoBehaviour
                 {
                     if (raycastHit.transform.TryGetComponent<ObjectGrababble>(out objectGrababble))
                     {
-                        objectGrababble.Grab(objectGrabPointTransform);                        
+                        if(objectGrababble.canBeGrabbed) objectGrababble.Grab(objectGrabPointTransform, this);                        
                     }
                 }
             } //Que no se pueda levitar a traves de la pared

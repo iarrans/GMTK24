@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static bool isPaused = false;
     public GameObject laserPointer;
 
     public GameObject pauseMenu;
 
+    private void Start()
+    {
+        isPaused = false;
+    }
     public void PauseGame(InputAction.CallbackContext context)
     {
         Cursor.lockState = CursorLockMode.None;
@@ -18,6 +22,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(true);
         laserPointer.SetActive(false);
         PlayerController.instance.canMove = false;
+        isPaused = true;
     }
 
     public void ResumeGame()
@@ -27,6 +32,7 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         laserPointer.SetActive(true);
         PlayerController.instance.canMove = true;
+        isPaused = false;
     }
 
     public void LoadScene(int scene)
