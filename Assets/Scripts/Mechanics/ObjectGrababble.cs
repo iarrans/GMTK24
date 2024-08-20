@@ -34,7 +34,6 @@ public class ObjectGrababble : MonoBehaviour
         rb.useGravity = true;
         grabParticles.gameObject.SetActive(false);
         AudioManager.instance.MagicSFXSource.Stop();
-        AudioManager.instance.MagicDropClip();
     }
 
     private void FixedUpdate()

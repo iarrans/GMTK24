@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource SFXSource;
 
-    public AudioClip magicDropClip;
     public AudioClip doorClip;
 
     public static AudioManager instance;
@@ -21,12 +20,6 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    public void MagicDropClip()
-    {
-        SFXSource.clip = magicDropClip;
-        SFXSource.Play();
     }
 
     public void PlayDoorClip()
