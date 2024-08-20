@@ -21,9 +21,14 @@ public class PlayerPickUpDrop : MonoBehaviour
             {
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, Mathf.Infinity, pickUpLayerMask))
                 {
-                    if (raycastHit.transform.TryGetComponent<ObjectGrababble>(out objectGrababble))
+                    ObjectGrababble optObject;
+                    if (raycastHit.transform.TryGetComponent<ObjectGrababble>(out optObject))
                     {
-                        if(objectGrababble.canBeGrabbed) objectGrababble.Grab(objectGrabPointTransform, this);                        
+                        if (optObject.canBeGrabbed)
+                        {
+                            optObject.Grab(objectGrabPointTransform, this);
+                            objectGrababble = optObject;
+                        }
                     }
                 }
             } //Que no se pueda levitar a traves de la pared
