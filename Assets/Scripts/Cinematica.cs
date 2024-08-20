@@ -27,7 +27,6 @@ public class Cinematica : MonoBehaviour
 
     public void SkipVideo()
     {
-        Debug.Log("Skipping Cinematic");
         SceneManager.LoadScene(nextScene);
     }
 
@@ -54,7 +53,6 @@ public class Cinematica : MonoBehaviour
 
             if (playerCurrentFrame >= frameCount - 1 && frameCount!=0)
             {
-                Debug.Log("CinematicEnded");
                 SceneManager.LoadScene(nextScene);
             }             
     }

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public static float sensitivity = 0.5f;
+    public static float sensitivity = 0.3f;
 
     public Rigidbody rb;
     public GameObject cameraHolder;
