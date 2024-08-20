@@ -437,5 +437,5 @@ MonoBehaviour:
   BGMSource: {fileID: 7790652879264227176}
   MagicSFXSource: {fileID: 6211135004163736256}
   SFXSource: {fileID: 2820887692074237566}
-  magicDropClip: {fileID: 8300000, guid: 236ff1b7c5325cf47985ca6cafe7d98e, type: 3}
+  magicDropClip: {fileID: 8300000, guid: be9894b60a6efb1429273396a662b82c, type: 3}
   doorClip: {fileID: 8300000, guid: de6e85ea66b87f345aff84303b5053b7, type: 3}
