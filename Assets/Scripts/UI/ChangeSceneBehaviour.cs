@@ -26,7 +26,6 @@ public class ChangeSceneBehaviour : MonoBehaviour
     {
         if (onChangeScene)
         {
-            Debug.Log("Changing scene...");
             if (image.color.a == 1)
             {
                 StartCoroutine(ChangeSceneCoroutine());
@@ -38,7 +37,6 @@ public class ChangeSceneBehaviour : MonoBehaviour
             image.color = nextColor;
         } else if (onLoadScene)
         {
-            Debug.Log("Loading scene...");
             if (image.color.a == 0)
             {                
                 gameObject.SetActive(false);

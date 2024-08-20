@@ -13,8 +13,6 @@ public class ExitDoorScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("LevelFinished");
-            Cursor.lockState = CursorLockMode.None;
             changeSceneBehaviour.ChangeScene(nextScene);
         }
     }
