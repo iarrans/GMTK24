@@ -140,6 +140,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 56e70c92550527342a2de78ebf443dcb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b3efbab84a788a44ac818ff453d01fa, type: 2}
     - target: {fileID: 919132149155446097, guid: 56e70c92550527342a2de78ebf443dcb,
         type: 3}
       propertyPath: m_Name
@@ -206,6 +211,7 @@ MonoBehaviour:
   grabParticles: {fileID: 7975588110289321728}
   maxScale: 20
   minScale: 10
+  scaleVelocityMultiplier: 5
   blinkShaderMaterial: {fileID: 2100000, guid: 513593d3f5380d24aa3462c1de31ca62, type: 2}
   meshRenderer: {fileID: 1335927963070070525}
 --- !u!114 &5016143694377688808

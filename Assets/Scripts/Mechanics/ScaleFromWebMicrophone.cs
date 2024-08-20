@@ -11,6 +11,7 @@ namespace UnityWebGLMicrophone
         public ParticleSystem grabParticles;
         public float maxScale = 10f;
         public float minScale = 0.5f;
+        public float scaleVelocityMultiplier = 1.0f;
         public Material blinkShaderMaterial;
         public MeshRenderer meshRenderer;
 
@@ -31,7 +32,7 @@ namespace UnityWebGLMicrophone
             float scaleVariation = detector.GetScaleChangeVariation();
             if (scaleVariation == 0) return;
             
-            Vector3 newScale = transform.localScale + new Vector3(scaleVariation, scaleVariation, scaleVariation);
+            Vector3 newScale = transform.localScale + new Vector3(scaleVariation, scaleVariation, scaleVariation) * scaleVelocityMultiplier;
             Vector3 newParticleScale = grabParticles.shape.scale + particlesScaleMultiplier * new Vector3(scaleVariation, scaleVariation, scaleVariation);
             if (newScale.x > maxScale) {
                 newScale = new(maxScale, maxScale, maxScale);
