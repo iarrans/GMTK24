@@ -43,7 +43,7 @@ public class ObjectGrababble : MonoBehaviour
         {
             Vector3 newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position + objectGrabPointTransform.forward * offset, Time.deltaTime * lerpSpeed);
             rb.MovePosition(newPosition);
-        } 
+        }
     }
 
     internal void ChangeOffset(float mouseScrollY)
@@ -51,7 +51,8 @@ public class ObjectGrababble : MonoBehaviour
         if (mouseScrollY < 0)
         {
             offset -= 1;
-        } else if (mouseScrollY > 0)
+        }
+        else if (mouseScrollY > 0)
         {
             offset += 1;
         }
@@ -59,17 +60,14 @@ public class ObjectGrababble : MonoBehaviour
         if (offset < 2) offset = 2;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnClip()
     {
+        StartCoroutine(DelayCanBeGrabbed());
         if (playerPickUpDrop == null) return;
         Drop();
         playerPickUpDrop.objectGrababble = null;
         canBeGrabbed = false;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        StartCoroutine(DelayCanBeGrabbed());
+        playerPickUpDrop = null;
     }
 
     IEnumerator DelayCanBeGrabbed()
