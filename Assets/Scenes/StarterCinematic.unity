@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1781544479}
-  videoFileName: GMTK24.mp4
+  videoFileName: OpeningCinematic.mp4
   frameCount: 0
   playerCurrentFrame: 0
   cinematicStarted: 0
